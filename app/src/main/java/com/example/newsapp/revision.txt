@@ -1,0 +1,5 @@
+MaterialTheme
+function repeat
+derivedStateOf
+HorizontalPager
+rememberPagerState

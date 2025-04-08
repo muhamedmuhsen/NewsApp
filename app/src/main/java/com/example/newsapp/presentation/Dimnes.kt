@@ -8,4 +8,6 @@ object Dimnes {
     val MediumPadding2=30.dp
 
     val IndicatorSize=14.dp
+
+    val PageIndicatorSize=52.dp
 }
