@@ -23,16 +23,13 @@ import com.example.newsapp.presentation.Dimnes.PageIndicatorSize
 import com.example.newsapp.presentation.common.NewsButton
 import com.example.newsapp.presentation.component.OnBoardingPage
 import com.example.newsapp.presentation.component.PageIndicator
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoardingScreen() {
     Column(modifier = Modifier.fillMaxSize()) {
-        val pagerState = rememberPagerState(initialPage = 0) {
-            pages.size
-        }
+        val pagerState = rememberPagerState(initialPage = 0, pageCount = { pages.size })
 
         val buttonState = remember {
             derivedStateOf {
@@ -67,7 +64,7 @@ fun OnBoardingScreen() {
                 modifier = Modifier.width(PageIndicatorSize)
             )
 
-            Row (){
+            Row() {
                 val scope = rememberCoroutineScope()
 
                 if (buttonState.value[0].isNotEmpty()) {
