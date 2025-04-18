@@ -18,16 +18,21 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import com.example.newsapp.presentation.Dimnes.MediumPadding2
 import com.example.newsapp.presentation.Dimnes.PageIndicatorSize
 import com.example.newsapp.presentation.common.NewsButton
 import com.example.newsapp.presentation.component.OnBoardingPage
 import com.example.newsapp.presentation.component.PageIndicator
+import com.example.newsapp.presentation.navgraph.Route
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun OnBoardingScreen(event: (OnBoardingEvent)->Unit) {
+fun OnBoardingScreen(
+    event: (OnBoardingEvent)->Unit,
+    navController:NavController
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0, pageCount = { pages.size })
 
@@ -80,6 +85,7 @@ fun OnBoardingScreen(event: (OnBoardingEvent)->Unit) {
                         if (pagerState.currentPage == 2) {
                             //TODO: Navigate to Home Screen
                             event(OnBoardingEvent.SaveAppEntry)
+                            navController.navigate(Route.HomeScreen)
                         } else {
                             pagerState.animateScrollToPage(pagerState.currentPage + 1)
                         }
