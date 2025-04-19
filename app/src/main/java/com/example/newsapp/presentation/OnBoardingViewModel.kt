@@ -2,7 +2,7 @@ package com.example.newsapp.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.newsapp.domain.usecases.SaveAppEntry
+import com.example.newsapp.domain.usecases.appentry.SaveAppEntry
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
