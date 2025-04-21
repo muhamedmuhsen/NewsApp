@@ -20,7 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    val viewModel by viewModels<MainViewModel>()
+    private val viewModel by viewModels<MainViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,16 +28,16 @@ class MainActivity : ComponentActivity() {
             viewModel.splashCondition
         }
         setContent {
-            val isSystemInDarkMode = isSystemInDarkTheme()
-            val systemController = rememberSystemUiController()
+            NewsAppTheme (dynamicColor = false){
+                val isSystemInDarkMode = isSystemInDarkTheme()
+                val systemController = rememberSystemUiController()
 
-            SideEffect {
-                systemController.setNavigationBarColor(
-                    color = Color.Transparent, darkIcons = !isSystemInDarkMode
-                )
-            }
-
-            NewsAppTheme {
+                SideEffect {
+                    systemController.setNavigationBarColor(
+                        color = Color.Transparent, darkIcons = !isSystemInDarkMode
+                    )
+                }
+                //TODO( add fillMaxSize )
                 Box(Modifier.background(color = MaterialTheme.colorScheme.background)) {
                     val startDestination = viewModel.startDestination
                     NavGraph(startDestination)

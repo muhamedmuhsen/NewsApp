@@ -31,7 +31,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun OnBoardingScreen(
     event: (OnBoardingEvent)->Unit,
-    //navController:NavController
+    navController:NavController
 ) {
     Column(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(initialPage = 0, pageCount = { pages.size })
@@ -85,7 +85,7 @@ fun OnBoardingScreen(
                         if (pagerState.currentPage == 2) {
                             //TODO: Navigate to Home Screen
                             event(OnBoardingEvent.SaveAppEntry)
-                            //navController.navigate(Route.HomeScreen)
+                            navController.navigate(Route.HomeScreen.route)
                         } else {
                             pagerState.animateScrollToPage(pagerState.currentPage + 1)
                         }

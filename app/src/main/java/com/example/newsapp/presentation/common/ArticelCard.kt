@@ -95,7 +95,6 @@ fun ArticleCard(
             }
         }
     }
-
 }
 
 @Preview(showBackground = true)

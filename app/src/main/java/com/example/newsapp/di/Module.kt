@@ -1,6 +1,7 @@
 package com.example.newsapp.di
 
 import android.app.Application
+import android.content.Context
 import com.example.newsapp.data.manager.LocalUserManagerImpl
 import com.example.newsapp.data.remote.NewsApi
 import com.example.newsapp.data.repository.NewsRepositoryImpl
@@ -27,8 +28,8 @@ object Module {
     @Provides
     @Singleton
     fun provideLocalUserManager(
-        @ApplicationContext application: Application
-    ): LocalUserManager = LocalUserManagerImpl(application)
+        @ApplicationContext context:Context
+    ): LocalUserManager = LocalUserManagerImpl(context)
 
     @Provides
     @Singleton
