@@ -1,6 +1,5 @@
 package com.example.newsapp.di
 
-import android.app.Application
 import android.content.Context
 import com.example.newsapp.data.manager.LocalUserManagerImpl
 import com.example.newsapp.data.remote.NewsApi
@@ -11,6 +10,7 @@ import com.example.newsapp.domain.usecases.appentry.ReadAppEntry
 import com.example.newsapp.domain.usecases.appentry.SaveAppEntry
 import com.example.newsapp.domain.usecases.news.GetNews
 import com.example.newsapp.domain.usecases.news.NewsUseCases
+import com.example.newsapp.domain.usecases.news.SearchNews
 import com.example.newsapp.util.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -65,6 +65,9 @@ object Module {
     @Singleton
     fun provideNewsCases(
         repository: NewsRepository
-    ) = NewsUseCases(newsUseCase = GetNews(repository))
+    ) = NewsUseCases(
+        newsUseCase = GetNews(repository),
+        searchNews = SearchNews(repository)
+    )
 
 }

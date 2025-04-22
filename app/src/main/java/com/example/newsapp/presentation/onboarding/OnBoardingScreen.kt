@@ -1,4 +1,4 @@
-package com.example.newsapp.presentation
+package com.example.newsapp.presentation.onboarding
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
@@ -25,6 +25,7 @@ import com.example.newsapp.presentation.common.NewsButton
 import com.example.newsapp.presentation.component.OnBoardingPage
 import com.example.newsapp.presentation.component.PageIndicator
 import com.example.newsapp.presentation.navgraph.Route
+import com.example.newsapp.presentation.pages
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)

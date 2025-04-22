@@ -63,8 +63,7 @@ fun SearchBar(
         TextField(
             modifier = modifier
                 .fillMaxWidth()
-                .searchBarBorder()
-                ,
+                .searchBarBorder(),
             value = text,
             onValueChange = onValueChange,
             readOnly = readOnly,
