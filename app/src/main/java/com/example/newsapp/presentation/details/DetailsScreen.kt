@@ -20,12 +20,11 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
-import coil3.Uri
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import com.example.newsapp.R
-import com.example.newsapp.data.remote.dto.Article
-import com.example.newsapp.data.remote.dto.Source
+import com.example.newsapp.domain.model.Article
+import com.example.newsapp.domain.model.Source
 import com.example.newsapp.presentation.Dimnes.ArticleImageHeight
 import com.example.newsapp.presentation.Dimnes.MediumPadding1
 import com.example.newsapp.presentation.details.component.DetailsTopBar

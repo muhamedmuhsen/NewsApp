@@ -1,7 +1,6 @@
 package com.example.newsapp.presentation.common
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
-import android.icu.text.ListFormatter.Width
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -29,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import com.example.newsapp.R
-import com.example.newsapp.data.remote.dto.Article
-import com.example.newsapp.data.remote.dto.Source
+import com.example.newsapp.domain.model.Article
+import com.example.newsapp.domain.model.Source
 import com.example.newsapp.presentation.Dimnes.ExtraSmallPadding
 import com.example.newsapp.presentation.Dimnes.ArticleCardSize
 import com.example.newsapp.presentation.Dimnes.ExtraSmallPadding2

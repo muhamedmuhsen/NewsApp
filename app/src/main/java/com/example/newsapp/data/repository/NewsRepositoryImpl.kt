@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import com.example.newsapp.data.remote.NewsApi
 import com.example.newsapp.data.remote.NewsPagingSource
 import com.example.newsapp.data.remote.NewsSearchPagingSource
-import com.example.newsapp.data.remote.dto.Article
+import com.example.newsapp.domain.model.Article
 import com.example.newsapp.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.Flow
 

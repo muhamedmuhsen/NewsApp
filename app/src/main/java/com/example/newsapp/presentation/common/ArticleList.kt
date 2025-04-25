@@ -8,15 +8,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
-import com.example.newsapp.data.remote.dto.Article
-import com.example.newsapp.data.remote.dto.Source
-import com.example.newsapp.presentation.Dimnes
+import com.example.newsapp.domain.model.Article
 import com.example.newsapp.presentation.Dimnes.ExtraSmallPadding2
 import com.example.newsapp.presentation.Dimnes.MediumPadding1
-import com.example.newsapp.ui.theme.NewsAppTheme
 
 @Composable
 fun ArticleList(

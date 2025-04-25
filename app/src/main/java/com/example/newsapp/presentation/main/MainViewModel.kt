@@ -1,4 +1,4 @@
-package com.example.newsapp
+package com.example.newsapp.presentation.main
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val appEntry: ReadAppEntry
+    appEntry: ReadAppEntry
 ) : ViewModel() {
     var splashCondition by mutableStateOf(true)
         private set
