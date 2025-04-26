@@ -29,6 +29,11 @@ fun NavGraph(
                 val viewModel: OnBoardingViewModel = hiltViewModel()
                 OnBoardingScreen(event = viewModel::onEvent, navController = navController)
             }
+            composable(route = Route.HomeScreen.route){
+                val viewModel: HomeViewModel = hiltViewModel()
+                val articles=viewModel.news.collectAsLazyPagingItems()
+                HomeScreen(articles = articles, navigate = {})
+            }
         }
 
         navigation(
@@ -46,5 +51,7 @@ fun NavGraph(
                 SearchScreen (state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
             }
         }
+
+
     }
 }

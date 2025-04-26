@@ -1,6 +1,7 @@
 package com.example.newsapp.presentation.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -13,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LOG_TAG
 import com.example.newsapp.data.local.NewsDao
 import com.example.newsapp.domain.model.Article
 import com.example.newsapp.domain.model.Source
@@ -66,6 +68,7 @@ class MainActivity : ComponentActivity() {
                 //TODO( add fillMaxSize )
                 Box(Modifier.background(color = MaterialTheme.colorScheme.background)) {
                     val startDestination = viewModel.startDestination
+                    Log.i("startDestination",startDestination)
                     NavGraph(startDestination)
                 }
             }
