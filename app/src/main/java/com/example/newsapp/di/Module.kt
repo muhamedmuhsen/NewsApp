@@ -14,6 +14,7 @@ import com.example.newsapp.domain.repository.NewsRepository
 import com.example.newsapp.domain.usecases.appentry.ReadAppEntry
 import com.example.newsapp.domain.usecases.appentry.SaveAppEntry
 import com.example.newsapp.domain.usecases.news.DeleteArticle
+import com.example.newsapp.domain.usecases.news.GetArticle
 import com.example.newsapp.domain.usecases.news.GetNews
 import com.example.newsapp.domain.usecases.news.NewsUseCases
 import com.example.newsapp.domain.usecases.news.SearchNews
@@ -81,6 +82,7 @@ object Module {
         selectArticles = SelectArticles(dao),
         upsertArticle = UpsertArticle(dao),
         deleteArticle = DeleteArticle(dao),
+        getArticle = GetArticle(dao),
     )
 
     @Provides

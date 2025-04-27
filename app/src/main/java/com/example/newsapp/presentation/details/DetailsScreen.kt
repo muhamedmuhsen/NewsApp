@@ -55,7 +55,7 @@ fun DetailsScreen(
                 }
             },
             onBookmarkClick = {
-                event(DetailsEvent.SaveArticle)
+                event(DetailsEvent.UpsertDeleteArticle)
             },
             onBrowsingClick = {
                 Intent(Intent.ACTION_VIEW).also {
