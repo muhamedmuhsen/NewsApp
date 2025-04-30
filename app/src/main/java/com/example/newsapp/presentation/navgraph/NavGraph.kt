@@ -48,7 +48,7 @@ fun NavGraph(
 
             composable(route = Route.HomeScreen.route){
                 val viewModel: SearchViewModel = hiltViewModel()
-                SearchScreen (state = viewModel.state.value, event = viewModel::onEvent, navigate = {})
+                SearchScreen (state = viewModel.state.value, event = viewModel::onEvent, navigateToDetails = {})
             }
         }
 

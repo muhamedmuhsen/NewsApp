@@ -29,7 +29,7 @@ import com.example.newsapp.presentation.common.SearchBar
 import com.example.newsapp.presentation.navgraph.Route
 
 @Composable
-fun HomeScreen(articles: LazyPagingItems<Article>, navigate: (String) -> Unit) {
+fun HomeScreen(articles: LazyPagingItems<Article>, navigateToSearch: () -> Unit,navigateToDetails: (Article) -> Unit) {
     val titles by remember {
         derivedStateOf {
             if (articles.itemCount > 10) {
@@ -63,7 +63,7 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate: (String) -> Unit) {
         SearchBar(
             text = "",
             readOnly = true,
-            onSearch = { navigate(Route.SearchScreen.route) },
+            onSearch = { navigateToSearch() },
             onValueChange = {})
 
         Spacer(Modifier.height(MediumPadding1))
@@ -82,7 +82,7 @@ fun HomeScreen(articles: LazyPagingItems<Article>, navigate: (String) -> Unit) {
 
         ArticleList(
             articles = articles,
-            onClick = { navigate(Route.NewsNavigation.route) },
+            onClick = { navigateToDetails(it) },
             modifier = Modifier.padding(MediumPadding1)
         )
     }
